@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Knee Osteoarthritis Detection</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+/* ================= BODY ================= */
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#333;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:#0d6efd;
+  color:white;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:60px 80px;
+  color:white;
+}
+
+.hero img{
+  width:340px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+  display:flex;
+  gap:25px;
+  padding:20px 60px;
+}
+
+.feature-card{
+  flex:1;
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+
+.feature-card h3{
+  color:#0d6efd;
+}
+
+/* ================= MAIN LAYOUT ================= */
+
+.container{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:30px;
+  padding:40px 60px;
+}
+
+/* ================= CARDS ================= */
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+
+h3{
+  margin-top:0;
+  color:#0d6efd;
+}
+
+/* ================= FORM ================= */
+
+input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:6px;
+  border:1px solid #ddd;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#0d6efd;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#0b5ed7;
+}
+
+/* ================= IMAGE PREVIEW ================= */
+
+.preview{
+  width:100%;
+  border-radius:8px;
+  margin-top:10px;
+  display:none;
+}
+
+/* ================= RESULT ================= */
+
+.resultBox{
+  text-align:center;
+  margin-top:12px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* ================= TABLE ================= */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  background:#0d6efd;
+  color:white;
+}
+
+th,td{
+  padding:10px;
+  text-align:center;
+  border-bottom:1px solid #eee;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+  text-align:center;
+  padding:15px;
+  background:#0d6efd;
+  color:white;
+  margin-top:40px;
+}
+
+@media(max-width:900px){
+  .container{
+    grid-template-columns:1fr;
+  }
+  .hero{
+    flex-direction:column;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+  <div class="logo">Knee Osteoarthritis Detection</div>
+  <div>Healthcare Intelligence System</div>
+</div>
+
+
+<!-- ================= HERO SECTION ================= -->
+<div class="hero">
+  <div>
+    <h1>AI Powered Knee Osteoarthritis Detection</h1>
+    <p>Upload X-ray scans and instantly detect OA severity grade using Deep Learning.</p>
+  </div>
+
+  <!-- Medical image -->
+  <img src="https://images.unsplash.com/photo-1588776814546-baf2e1b1d3f3" />
+</div>
+
+
+<!-- ================= FEATURES ================= -->
+<div class="features">
+
+  <div class="feature-card">
+    <h3>⚡ Fast Prediction</h3>
+    <p>Get results within seconds using TensorFlow model inference.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>🤖 AI Model</h3>
+    <p>AlexNet CNN trained on knee X-ray dataset.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>📊 Patient Records</h3>
+    <p>Automatically stores patient history in database.</p>
+  </div>
+
+</div>
+
+
+
+<!-- ================= MAIN DASHBOARD ================= -->
+<div class="container">
+
+  <!-- Upload Module -->
+  <div class="card">
+    <h3>Upload Patient Scan</h3>
+
+    <form id="form">
+      <input type="text" name="name" placeholder="Patient Name" required>
+      <input type="number" name="age" placeholder="Age" required>
+      <input type="file" id="imageInput" name="image" required>
+
+      <img id="preview" class="preview">
+
+      <button type="submit">Predict Grade</button>
+    </form>
+
+    <div id="result" class="resultBox"></div>
+  </div>
+
+
+
+  <!-- History Module -->
+  <div class="card">
+    <h3>Patient History</h3>
+
+    <table id="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</div>
+
+
+<div class="footer">
+  © 2026 Knee OA Detection System | Built with Flask + TensorFlow
+</div>
+
+
+<script>
+
+const form = document.getElementById("form");
+const preview = document.getElementById("preview");
+const imageInput = document.getElementById("imageInput");
+const result = document.getElementById("result");
+const table = document.querySelector("#table tbody");
+
+imageInput.onchange = () => {
+  preview.src = URL.createObjectURL(imageInput.files[0]);
+  preview.style.display = "block";
+};
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  let formData = new FormData(form);
+
+  result.innerHTML = "⏳ Predicting...";
+
+  let res = await fetch("http://127.0.0.1:5000/predict", {
+    method:"POST",
+    body:formData
+  });
+
+  let data = await res.json();
+
+  result.innerHTML = "Predicted Grade: <span style='color:#0d6efd'>" + data.grade + "</span>";
+
+  loadPatients();
+});
+
+async function loadPatients(){
+  let res = await fetch("http://127.0.0.1:5000/patients");
+  let data = await res.json();
+
+  table.innerHTML = "";
+
+  data.forEach(p=>{
+    table.innerHTML += `
+      <tr>
+        <td>${p[0]}</td>
+        <td>${p[1]}</td>
+        <td>${p[2]}</td>
+        <td>${p[3]}</td>
+      </tr>
+    `;
+  });
+}
+
+loadPatients();
+
+</script>
+
+</body>
+</html>

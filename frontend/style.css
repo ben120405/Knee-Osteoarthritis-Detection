@@ -1,0 +1,130 @@
+/* ================= GENERAL ================= */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  background: #2f80ed;
+  color: white;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag {
+  background: white;
+  color: #2f80ed;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+
+/* ================= LAYOUT ================= */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+
+/* ================= CARDS ================= */
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ================= FORM ================= */
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #2f80ed;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1366d6;
+}
+
+
+/* ================= IMAGE PREVIEW ================= */
+
+.preview {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+  display: none;
+}
+
+
+/* ================= RESULT ================= */
+
+.resultBox {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/* ================= TABLE ================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #2f80ed;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background: #f5f9ff;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

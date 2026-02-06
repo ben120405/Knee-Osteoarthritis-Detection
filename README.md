@@ -68,16 +68,26 @@ The system combines:
 knee_oa_project/
 │
 ├── backend/
-│ ├── app.py
-│ ├── database.db
-│ ├── uploads/
-│ └── requirements.txt
-│
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── database/
+│   │   └── database.db
+│   ├── model/
+│   │   └── AlexNet_KL_Classifier.h5   (NOT pushed to GitHub)
+│   ├── uploads/
+│   
 ├── frontend/
-│ └── index.html
+│   ├── index.html         MAIN dashboard file 
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── assets/
+│       └── images/
 │
 ├── .gitignore
-└── README.md
+├── README.md
+└── run.md   ( how to run project)
 
 
 > ⚠️ **Note:**  

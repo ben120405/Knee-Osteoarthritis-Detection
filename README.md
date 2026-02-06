@@ -77,7 +77,7 @@ knee_oa_project/
 │   ├── uploads/
 │   
 ├── frontend/
-│   ├── index.html         MAIN dashboard file 
+│   ├── index.html         (MAIN dashboard file) 
 │   ├── css/
 │   │   └── style.css
 │   ├── js/

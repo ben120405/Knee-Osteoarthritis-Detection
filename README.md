@@ -1,4 +1,4 @@
-# Knee Osteoarthritis Detection using Deep Learning
+# Knee Osteoarthritis Detection
 
 A full-stack web application that detects **Knee Osteoarthritis (OA) grade** from X-ray images using a **pre-trained AlexNet CNN model**, with a modern dashboard interface for doctors and patient data management.
 
